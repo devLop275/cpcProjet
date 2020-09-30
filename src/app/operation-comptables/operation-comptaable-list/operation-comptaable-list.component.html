@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">libelle</th>
+            <th scope="col">referenceSociete</th>
+            <th scope="col">referenceFacture</th>
+            <th scope="col">montant</th>
+            <th scope="col">dateOperationComptable</th>
+            <th scope="col">dateSaisie</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor="let operationComptable of operationComptables; let i = index">
+            <td>{{ operationComptable.libelle}}</td>
+            <td>{{ operationComptable.referenceSociete}}</td>
+            <td>{{ operationComptable.referenceFacture}}</td>
+            <td>{{ operationComptable.montant}}</td>
+            <td>{{ operationComptable.dateOperationComptable}}</td>
+            <td>{{ operationComptable.dateSaisie}}</td>
+            <td>
+                <!--<button class="btn btn-sm btn-warning mr-2" (click)="update(mission, i)"><i class="fa fa-pencil"></i></button> -->
+                <button class="btn btn-sm btn-primary" (click)="delete(operationComptable.id,i)"><i class="fa fa-trash"></i> </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button type="submit" class="btn btn-block btn-primary" (click)="exportExcel()">
+        export Excel
+    </button>

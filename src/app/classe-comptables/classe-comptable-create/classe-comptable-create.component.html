@@ -1,0 +1,20 @@
+<div class="card mt-5">
+    <div class="card-header">
+        Creation Classe Comptable
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleRIB">Numero</label>
+            <input type="text" [(ngModel)]="classeComptable.numero" class="form-control" id="exampleRIB"
+                placeholder="Enter le Num" />
+        </div>
+        <div class="form-group">
+            <label for="exampleSolde">Libelle</label>
+            <input type="text" [(ngModel)]="classeComptable.libelle" class="form-control" id="exampleSolde"
+                placeholder="Entrer le libelle" />
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-block btn-primary" (click)="save()">Save</button>
+    </div>
+</div>

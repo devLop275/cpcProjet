@@ -1,0 +1,17 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">montant</th>
+            <th scope="col">action</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor="let cpcsousclasse of cpcsousclasses; let i = index">
+            <td>{{ cpcsousclasse.montant}}</td>
+            <td>
+                <!--<button class="btn btn-sm btn-warning mr-2" (click)="update(mission, i)"><i class="fa fa-pencil"></i></button> -->
+                <button class="btn btn-sm btn-primary" (click)="delete(cpcsousclasse.id,i)"><i class="fa fa-trash"></i> </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

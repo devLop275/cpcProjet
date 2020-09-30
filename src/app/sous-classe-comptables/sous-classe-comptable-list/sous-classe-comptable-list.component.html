@@ -1,0 +1,28 @@
+<div class="card">
+    <div class=" card-header">
+        <h4 class=" card-title">Liste des Sous Classe Comptables</h4>
+    </div>
+    <div class=" card-body">
+        <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+                <thead class=" text-primary">
+                    <tr>
+                        <th>Numero</th>
+                        <th>Libelle</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sousClasseComptable of sousClasseComptables; let i = index">
+                        <td>{{ sousClasseComptable.numero }}</td>
+                        <td>{{ sousClasseComptable.libelle }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning mr-2" (click)="update(sousClasseComptable, i)"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-sm btn-danger" (click)="delete(sousClasseComptable.id, i)"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

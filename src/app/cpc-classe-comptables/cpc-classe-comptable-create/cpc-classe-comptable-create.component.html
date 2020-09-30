@@ -1,0 +1,21 @@
+<div class="card mt-5">
+    <div class="card-header">
+      Cpc clsse comptable
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>montant</label>
+        <input
+          type="text"
+          [(ngModel)]="cpcClasseComptable.montant"
+          class="form-control"
+          placeholder="Enter le montant"
+        /> 
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-block btn-primary" (click)="save()">
+        Save
+      </button>
+    </div>
+  </div>

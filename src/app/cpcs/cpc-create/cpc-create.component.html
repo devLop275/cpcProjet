@@ -1,0 +1,76 @@
+
+  <div class="card mt-5">
+    <div class="card-header">
+      Cpc
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>date Debut</label>
+        <input
+          type="text"
+          [(ngModel)]="cpc.dateDebut"
+          class="form-control"
+          placeholder="Enter la date du Debut"
+        />
+      </div>
+      <div class="form-group">
+        <label>dateFin</label>
+        <input
+          type="text"
+          [(ngModel)]="cpc.dateFin"
+          class="form-control"
+          placeholder="Enter la date du Fin"
+        />
+      </div>
+      <div class="form-group">
+        <label>Montant</label>
+        <input
+          type="text"
+          [(ngModel)]="cpc.montant"
+          class="form-control"
+          placeholder="Entrer le Montant"
+        />
+      </div>
+      <div class="form-group">
+        <label>reference Societe</label>
+        <input
+          type="text"
+          [(ngModel)]="cpc.referenceSociete"
+          class="form-control"
+          placeholder="Enter la reference du la Societe"
+        />
+      </div>
+      <div class="form-group">
+        <label>total Charge</label>
+        <input
+          type="text"
+          [(ngModel)]="cpc.totalCharge"
+          class="form-control"
+          placeholder="Enter le Total Charge"
+        />
+      </div>
+      <div class="form-group">
+        <label>total Produit</label>
+        <input
+          type="text"
+          [(ngModel)]="cpc.totalProduit"
+          class="form-control"
+          placeholder="Enter le Total Produit"
+        />
+      </div>
+      <div class="form-group">
+        <label>resultat</label>
+        <input
+          type="text"
+          [(ngModel)]="cpc.resultat"
+          class="form-control"
+          placeholder="Enter la resultat"
+        />
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-block btn-primary" (click)="save()">
+        Save
+      </button>
+    </div>
+  </div>

@@ -1,0 +1,30 @@
+
+<div class=" card-body">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">date Debut</th>
+            <th scope="col">date Fin</th>
+            <th scope="col">montant</th>
+            <th scope="col">reference Societe</th>
+            <th scope="col">total Charge</th>
+            <th scope="col">total Produit</th>
+            <th scope="col">resultat</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor="let cpc of cpcs; let i = index">
+            <td>{{ cpc.dateDebut}}</td>
+            <td>{{ cpc.dateFin}}</td>
+            <td>{{ cpc.montant}}</td>
+            <td>{{ cpc.referenceSociete}}</td>
+            <td>{{ cpc.totalCharge}}</td>
+            <td>{{ cpc.totalProduit}}</td>
+            <td>{{ cpc.resultat}}</td>
+            <td>
+                <!--<button class="btn btn-sm btn-warning mr-2" (click)="update(mission, i)"><i class="fa fa-pencil"></i></button> -->
+                <button class="btn btn-sm btn-primary" (click)="delete(cpc.referenceSociete,i)"><i class="fa fa-trash"></i> </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,66 @@
+<div class="card mt-5">
+    <div class="card-header">
+      Operation Comptable
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>Type</label>
+        <input
+          type="text"
+          [(ngModel)]="operationComptable.libelle"
+          class="form-control"
+          placeholder="Enter le montant"
+        />
+      </div>
+      <div class="form-group">
+        <label>reference Societe</label>
+        <input
+          type="text"
+          [(ngModel)]="operationComptable.referenceSociete"
+          class="form-control"
+          placeholder="Enter le montant"
+        />
+      </div>
+      <div class="form-group">
+        <label>reference Facture</label>
+        <input
+          type="text"
+          [(ngModel)]="operationComptable.referenceFacture"
+          class="form-control"
+          placeholder="Enter le montant"
+        />
+      </div>
+      <div class="form-group">
+        <label>montant</label>
+        <input
+          type="text"
+          [(ngModel)]="operationComptable.montant"
+          class="form-control"
+          placeholder="Enter le montant"
+        />
+      </div>
+      <div class="form-group">
+        <label>date Operation Comptable</label>
+        <input
+          type="text"
+          [(ngModel)]="operationComptable.dateOperationComptable"
+          class="form-control"
+          placeholder="Enter le montant"
+        />
+      </div>
+      <div class="form-group">
+        <label>date Saisie</label>
+        <input
+          type="text"
+          [(ngModel)]="operationComptable.dateSaisie"
+          class="form-control"
+          placeholder="Enter le montant"
+        />
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-block btn-primary" (click)="save()">
+        Save
+      </button>
+    </div>
+  </div>
