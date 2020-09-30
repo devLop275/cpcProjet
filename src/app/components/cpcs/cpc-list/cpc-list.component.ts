@@ -19,8 +19,8 @@ export class CpcListComponent implements OnInit {
     return this.cpcService.cpcs;
   }
   
-  public delete(referenceSociete: string, i:number){
-    this.cpcService.delete(referenceSociete,i);
+  public delete(id: number, i:number){
+    this.cpcService.delete(id,i);
   }
 
   

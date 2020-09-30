@@ -13,24 +13,27 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
-import { CpcsComponent } from './cpcs/cpcs.component';
-import { CpcCreateComponent } from './cpcs/cpc-create/cpc-create.component';
-import { CpcListComponent } from './cpcs/cpc-list/cpc-list.component';
-import { CpcSousClassesComponent } from './cpc-sous-classes/cpc-sous-classes.component';
-import { CpcSousClasseCreateComponent } from './cpc-sous-classes/cpc-sous-classe-create/cpc-sous-classe-create.component';
-import { CpcSousClasseListComponent } from './cpc-sous-classes/cpc-sous-classe-list/cpc-sous-classe-list.component';
-import { CpcClasseComptablesComponent } from './cpc-classe-comptables/cpc-classe-comptables.component';
-import { CpcClasseComptableCreateComponent } from './cpc-classe-comptables/cpc-classe-comptable-create/cpc-classe-comptable-create.component';
-import { CpcClasseComptableListComponent } from './cpc-classe-comptables/cpc-classe-comptable-list/cpc-classe-comptable-list.component';
-import { ClasseComptablesComponent } from './classe-comptables/classe-comptables.component';
-import { ClasseComptableCreateComponent } from './classe-comptables/classe-comptable-create/classe-comptable-create.component';
-import { ClasseComptableListComponent } from './classe-comptables/classe-comptable-list/classe-comptable-list.component';
-import { SousClasseComptablesComponent } from './sous-classe-comptables/sous-classe-comptables.component';
-import { SousClasseComptableCreateComponent } from './sous-classe-comptables/sous-classe-comptable-create/sous-classe-comptable-create.component';
-import { SousClasseComptableListComponent } from './sous-classe-comptables/sous-classe-comptable-list/sous-classe-comptable-list.component';
-import { OperationComptablesComponent } from './operation-comptables/operation-comptables.component';
-import { OperationComptaableCreateComponent } from './operation-Comptables/operation-comptaable-create/operation-comptaable-create.component';
-import { OperationComptaableListComponent } from './operation-Comptables/operation-comptaable-list/operation-comptaable-list.component';
+import { CpcsComponent } from './components/cpcs/cpcs.component';
+import { CpcCreateComponent } from './components/cpcs/cpc-create/cpc-create.component';
+import { CpcListComponent } from './components/cpcs/cpc-list/cpc-list.component';
+import { CpcSousClassesComponent } from './components/cpc-sous-classes/cpc-sous-classes.component';
+import { CpcSousClasseCreateComponent } from './components/cpc-sous-classes/cpc-sous-classe-create/cpc-sous-classe-create.component';
+import { CpcSousClasseListComponent } from './components/cpc-sous-classes/cpc-sous-classe-list/cpc-sous-classe-list.component';
+import { CpcClasseComptablesComponent } from './components/cpc-classe-comptables/cpc-classe-comptables.component';
+import { CpcClasseComptableCreateComponent } from './components/cpc-classe-comptables/cpc-classe-comptable-create/cpc-classe-comptable-create.component';
+import { CpcClasseComptableListComponent } from './components/cpc-classe-comptables/cpc-classe-comptable-list/cpc-classe-comptable-list.component';
+import { ClasseComptablesComponent } from './components/classe-comptables/classe-comptables.component';
+import { ClasseComptableCreateComponent } from './components/classe-comptables/classe-comptable-create/classe-comptable-create.component';
+import { ClasseComptableListComponent } from './components/classe-comptables/classe-comptable-list/classe-comptable-list.component';
+import { SousClasseComptablesComponent } from './components/sous-classe-comptables/sous-classe-comptables.component';
+import { SousClasseComptableCreateComponent } from './components/sous-classe-comptables/sous-classe-comptable-create/sous-classe-comptable-create.component';
+import { SousClasseComptableListComponent } from './components/sous-classe-comptables/sous-classe-comptable-list/sous-classe-comptable-list.component';
+import { OperationComptablesComponent } from './components/operation-comptables/operation-comptables.component';
+import { OperationComptaableCreateComponent } from './components/operation-Comptables/operation-comptaable-create/operation-comptaable-create.component';
+import { OperationComptaableListComponent } from './components/operation-Comptables/operation-comptaable-list/operation-comptaable-list.component';
+import { CompteComptablesComponent } from './components/compte-comptables/compte-comptables.component';
+import { CompteComptableCreateComponent } from './components/compte-comptables/compte-comptable-create/compte-comptable-create.component';
+import { CompteComptableListComponent } from './components/compte-comptables/compte-comptable-list/compte-comptable-list.component';
 
 @NgModule({
   imports: [
@@ -43,7 +46,7 @@ import { OperationComptaableListComponent } from './operation-Comptables/operati
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, CpcsComponent, CpcCreateComponent, CpcListComponent, CpcSousClassesComponent, CpcSousClasseCreateComponent, CpcSousClasseListComponent, CpcClasseComptablesComponent, CpcClasseComptableCreateComponent, CpcClasseComptableListComponent, ClasseComptablesComponent, ClasseComptableCreateComponent, ClasseComptableListComponent, SousClasseComptablesComponent, SousClasseComptablesComponent, SousClasseComptablesComponent, SousClasseComptableCreateComponent, SousClasseComptableListComponent, OperationComptablesComponent, OperationComptaableCreateComponent, OperationComptaableListComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, CpcsComponent, CpcCreateComponent, CpcListComponent, CpcSousClassesComponent, CpcSousClasseCreateComponent, CpcSousClasseListComponent, CpcClasseComptablesComponent, CpcClasseComptableCreateComponent, CpcClasseComptableListComponent, ClasseComptablesComponent, ClasseComptableCreateComponent, ClasseComptableListComponent, SousClasseComptablesComponent, SousClasseComptablesComponent, SousClasseComptablesComponent, SousClasseComptableCreateComponent, SousClasseComptableListComponent, OperationComptablesComponent, OperationComptaableCreateComponent, OperationComptaableListComponent, CompteComptablesComponent,CompteComptableCreateComponent,CompteComptableListComponent ],
   providers: [],
   bootstrap: [AppComponent]
 })

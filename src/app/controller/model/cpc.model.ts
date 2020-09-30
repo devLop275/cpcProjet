@@ -9,7 +9,6 @@ export class Cpc {
     public totalCharge:number;
     public totalProduit:number;
     public resultat:number;
-    public cpcSousClassesVo:CpcSousClasse[];
     constructor(){
 
     }

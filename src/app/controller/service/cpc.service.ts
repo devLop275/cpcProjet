@@ -48,9 +48,10 @@ export class CpcService {
   }
 
   public save() {
-    this.http.post<Cpc>('http://localhost:8090/accountingProject/Cpc/', this.cpc).subscribe(
+    this.http.post<Cpc>('http://localhost:8091/ProjetCpc/Cpc/', this.cpc).subscribe(
       data => {
         if (data != null ) {
+          this.cpc.id = data.id;
           this.cpcs.push(this.clone(this.cpc));
           this.cpc = null;
           console.log(data);
@@ -62,7 +63,7 @@ export class CpcService {
   }
 
   public findAll() {
-    this.http.get<Array<Cpc>>('http://localhost:8090/accountingProject/Cpc/').subscribe(
+    this.http.get<Array<Cpc>>('http://localhost:8091/ProjetCpc/Cpc/').subscribe(
       data => {
         this.cpcs = data;
         console.log(data);
@@ -70,11 +71,15 @@ export class CpcService {
     )
   }
 
-  public delete(referenceSociete: string, i: number) {
-    this.http.delete<number>('http://localhost:8090/accountingProject/Cpc/referenceSociete/' + referenceSociete).subscribe(
+  public delete(id: number, i: number) {
+    this.http.delete<number>('http://localhost:8091/ProjetCpc/Cpc/id/' + id).subscribe(
       data => {
+        if(data > 0){
         this.cpcs.splice(i,1);
         console.log(data);
+        } else {
+          console.log(data);
+        }
       }
     )
   }
