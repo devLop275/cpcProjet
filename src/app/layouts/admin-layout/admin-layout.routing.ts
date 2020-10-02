@@ -12,12 +12,12 @@ import { TypographyComponent } from "../../pages/typography/typography.component
 
 import { from } from 'rxjs';
 import { CpcsComponent } from 'src/app/components/cpcs/cpcs.component';
-import { CpcSousClasseListComponent } from 'src/app/components/cpc-sous-classes/cpc-sous-classe-list/cpc-sous-classe-list.component';
 import { CpcClasseComptablesComponent } from 'src/app/components/cpc-classe-comptables/cpc-classe-comptables.component';
 import { ClasseComptablesComponent } from 'src/app/components/classe-comptables/classe-comptables.component';
 import { SousClasseComptablesComponent } from 'src/app/components/sous-classe-comptables/sous-classe-comptables.component';
 import { OperationComptablesComponent } from 'src/app/components/operation-comptables/operation-comptables.component';
 import { CompteComptablesComponent } from 'src/app/components/compte-comptables/compte-comptables.component';
+import { CpcSousClassesComponent } from 'src/app/components/cpc-sous-classes/cpc-sous-classes.component';
 
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
@@ -32,7 +32,7 @@ export const AdminLayoutRoutes: Routes = [
   //{ path: "employee-create", component: EmployeeCreateComponent }
   //{ path: "cpc-create" , component: CpcCreateComponent},
   {path : "Cpcs" , component:CpcsComponent},
-  {path:"CpcSousClasses", component:CpcSousClasseListComponent},
+  {path:"CpcSousClasses", component:CpcSousClassesComponent},
   {path:"CpcClasseComptables", component:CpcClasseComptablesComponent},
   {path:"ClasseComptables" , component:ClasseComptablesComponent},
   {path:"SousClasseComptables" , component:SousClasseComptablesComponent},

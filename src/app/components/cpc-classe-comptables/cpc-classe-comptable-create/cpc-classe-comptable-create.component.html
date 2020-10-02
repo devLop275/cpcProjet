@@ -12,6 +12,15 @@
           placeholder="Enter le montant"
         /> 
       </div>
+      <div class="form-group">
+        <label for="cpcSousClasse"> Cpc Classe Comptable</label>
+        <select name="cpcSousClasse" id="cpc" [(ngModel)]="cpcClasseComptable.cpcSousClasse" class="form-control" #mySelect
+            (change)='onOptionsSelectedem(mySelect.value)'>
+            <option value="" style="color: black;" >Sélectionnez...</option>
+            <option *ngFor="let s of cpcSousClasses;" [ngValue]="s" style="color: black;">
+                {{ s.id }}
+            </option>
+        </select>
     </div>
     <div class="card-footer">
       <button type="submit" class="btn btn-block btn-primary" (click)="save()">

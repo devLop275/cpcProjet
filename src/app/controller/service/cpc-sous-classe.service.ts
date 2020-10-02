@@ -7,47 +7,67 @@ import { CpcSousClasse } from '../model/cpc-sous-classe.model';
 })
 export class CpcSousClasseService {
  
-  private _cpcsousclasse = new CpcSousClasse();
-  private _cpcsousclasses = new Array<CpcSousClasse>();
-
+  private _cpcSousClasse = new CpcSousClasse();
+  private _cpcSousClasses = new Array<CpcSousClasse>();
+  private baseUrl = 'http://localhost:8091/ProjetCpc/CpcSousClasse';
 
   constructor(private http: HttpClient) { }
 
-  get cpcsousclasse(): CpcSousClasse {
-    if (this._cpcsousclasse == null) {
-      this._cpcsousclasse = new CpcSousClasse();
+  get cpcSousClasse(): CpcSousClasse {
+    if (this._cpcSousClasse == null) {
+      this._cpcSousClasse = new CpcSousClasse();
     }
-    return this._cpcsousclasse;
+    return this._cpcSousClasse;
   }
 
-  set cpcsousclasse(value: CpcSousClasse) {
-    this._cpcsousclasse = value;
+  set cpcSousClasse(value: CpcSousClasse) {
+    this._cpcSousClasse = value;
   }
 
-  get cpcsousclasses(): Array<CpcSousClasse> {
-    if (this._cpcsousclasses == null) {
-      this._cpcsousclasses = new Array<CpcSousClasse>();
+  get cpcSousClasses(): Array<CpcSousClasse> {
+    if (this._cpcSousClasses == null) {
+      this._cpcSousClasses = new Array<CpcSousClasse>();
     }
-    return this._cpcsousclasses;
+    return this._cpcSousClasses;
   }
 
-  set cpcsousclasses(value: Array<CpcSousClasse>) {
-    this._cpcsousclasses = value;
+  set cpcSousClasses(value: Array<CpcSousClasse>) {
+    this._cpcSousClasses = value;
   }
 
-  private clone(cpcsousclaase: CpcSousClasse){
+  public clone(cpcsousclaase: CpcSousClasse){
     const myClone = new CpcSousClasse();
+    myClone.id = cpcsousclaase.id;
     myClone.montant = cpcsousclaase.montant;
+    myClone.cpc = cpcsousclaase.cpc;
     return myClone;
+  }
+
+  public getAllCpcSousClasses(){
+    return this.http.get<CpcSousClasse[]>(this.baseUrl+'/');
+  }
+
+  public update() {
+    this.http.put<number>(this.baseUrl + '/update/', this.cpcSousClasse).subscribe(data => {
+      if (data > 0) {
+        const index = this.cpcSousClasses.findIndex(p => p.id === this.cpcSousClasse.id);
+        this.cpcSousClasses[index] = this.cpcSousClasse;
+        this.cpcSousClasse = null;
+      }
+      else {
+        console.log('Erreur modification : ' + data);
+      }
+    });
   }
 
 
   public save() {
-    this.http.post<CpcSousClasse>('http://localhost:8090/accountingProject/CpcSousClasse/', this.cpcsousclasse).subscribe(
+    this.http.post<CpcSousClasse>( this.baseUrl +'/', this.cpcSousClasse).subscribe(
       data => {
         if (data != null){
-          this.cpcsousclasses.push(this.clone(this.cpcsousclasse));
-          this.cpcsousclasse = null;
+          this.cpcSousClasse.id = data.id;
+          this.cpcSousClasses.push(this.clone(this.cpcSousClasse));
+          this.cpcSousClasse = null;
           console.log(data);
         } else {
           console.log(data);
@@ -57,18 +77,18 @@ export class CpcSousClasseService {
   }
 
   public findAll() {
-    this.http.get<Array<CpcSousClasse>>('http://localhost:8090/accountingProject/CpcSousClasse/').subscribe(
+    this.http.get<Array<CpcSousClasse>>(this.baseUrl + '/').subscribe(
       data => {
-        this.cpcsousclasses = data;
+        this.cpcSousClasses = data;
         console.log(data);
       }
     )
   }
 
   public delete(id: number, i: number) {
-    this.http.delete<number>('http://localhost:8090/accountingProject/CpcSousClasse/id/' + id).subscribe(
+    this.http.delete<number>(this.baseUrl + '/id/' + id).subscribe(
       data => {
-        this.cpcsousclasses.splice(i, 1);
+        this.cpcSousClasses.splice(i, 1);
         console.log(data);
       }
     )

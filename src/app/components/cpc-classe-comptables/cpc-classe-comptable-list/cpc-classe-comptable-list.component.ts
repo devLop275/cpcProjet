@@ -15,10 +15,14 @@ export class CpcClasseComptableListComponent implements OnInit {
     this.cpcClasseComptableService.findAll();
   }
 
-  get cpcclasseComptables(): Array<CpcClasseComptable>{
+  get cpcClasseComptables(): Array<CpcClasseComptable>{
     return this.cpcClasseComptableService.cpcClasseComptables;
   }
   
+  public update(cpcClasseComptable : CpcClasseComptable) {
+    this.cpcClasseComptableService.cpcClasseComptable = this.cpcClasseComptableService.clone(cpcClasseComptable);
+  }
+
   public delete(id: number, i:number){
     this.cpcClasseComptableService.delete(id,i);
   }

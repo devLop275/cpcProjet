@@ -2,6 +2,7 @@ import { CpcSousClasse } from './cpc-sous-classe.model';
 export class Cpc {
 
     public id:number;
+    public numero:number;
     public dateDebut:Date;
     public dateFin:Date;
     public montant:number;

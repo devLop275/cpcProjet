@@ -23,6 +23,9 @@ export class CpcListComponent implements OnInit {
     this.cpcService.delete(id,i);
   }
 
+  public update(cpc: Cpc) {
+    this.cpcService.cpc = this.cpcService.clone(cpc);
+  }
   
   
 }
