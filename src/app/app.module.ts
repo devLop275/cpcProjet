@@ -16,9 +16,6 @@ import { ComponentsModule } from "./components/components.module";
 import { CpcsComponent } from './components/cpcs/cpcs.component';
 import { CpcCreateComponent } from './components/cpcs/cpc-create/cpc-create.component';
 import { CpcListComponent } from './components/cpcs/cpc-list/cpc-list.component';
-import { CpcSousClassesComponent } from './components/cpc-sous-classes/cpc-sous-classes.component';
-import { CpcSousClasseCreateComponent } from './components/cpc-sous-classes/cpc-sous-classe-create/cpc-sous-classe-create.component';
-import { CpcSousClasseListComponent } from './components/cpc-sous-classes/cpc-sous-classe-list/cpc-sous-classe-list.component';
 import { CpcClasseComptablesComponent } from './components/cpc-classe-comptables/cpc-classe-comptables.component';
 import { CpcClasseComptableCreateComponent } from './components/cpc-classe-comptables/cpc-classe-comptable-create/cpc-classe-comptable-create.component';
 import { CpcClasseComptableListComponent } from './components/cpc-classe-comptables/cpc-classe-comptable-list/cpc-classe-comptable-list.component';
@@ -34,6 +31,15 @@ import { OperationComptaableListComponent } from './components/operation-comptab
 import { CompteComptablesComponent } from './components/compte-comptables/compte-comptables.component';
 import { CompteComptableCreateComponent } from './components/compte-comptables/compte-comptable-create/compte-comptable-create.component';
 import { CompteComptableListComponent } from './components/compte-comptables/compte-comptable-list/compte-comptable-list.component';
+import { CpcSousClassesComponent } from './components/cpc-sous-classes/cpc-sous-classes.component';
+import { CpcSousClasseCreateComponent } from './components/cpc-sous-classes/cpc-sous-classe-create/cpc-sous-classe-create.component';
+import { CpcSousClasseListComponent } from './components/cpc-sous-classes/cpc-sous-classe-list/cpc-sous-classe-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { OperationComptableRechercheV1Component } from './components/operation-comptables/operation-comptable-recherche-v1/operation-comptable-recherche-v1.component';
+import { OperationComptableRechercheV2Component } from './components/operation-comptables/operation-comptable-recherche-v2/operation-comptable-recherche-v2.component';
+import { OperationComptableRechercheV3Component } from './components/operation-comptables/operation-comptable-recherche-v3/operation-comptable-recherche-v3.component';
+
 
 @NgModule({
   imports: [
@@ -46,7 +52,37 @@ import { CompteComptableListComponent } from './components/compte-comptables/com
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, CpcsComponent, CpcCreateComponent, CpcListComponent, CpcSousClassesComponent, CpcSousClasseCreateComponent, CpcSousClasseListComponent, CpcClasseComptablesComponent, CpcClasseComptableCreateComponent, CpcClasseComptableListComponent, ClasseComptablesComponent, ClasseComptableCreateComponent, ClasseComptableListComponent, SousClasseComptablesComponent, SousClasseComptablesComponent, SousClasseComptablesComponent, SousClasseComptableCreateComponent, SousClasseComptableListComponent, OperationComptablesComponent, OperationComptaableCreateComponent, OperationComptaableListComponent, CompteComptablesComponent,CompteComptableCreateComponent,CompteComptableListComponent ],
+  declarations: [
+    AppComponent, 
+    AdminLayoutComponent, 
+    AuthLayoutComponent, 
+    CpcsComponent, 
+    CpcCreateComponent,
+    CpcListComponent, 
+    CpcSousClassesComponent,
+    CpcSousClasseCreateComponent, 
+    CpcSousClasseListComponent, 
+    CpcClasseComptablesComponent, 
+    CpcClasseComptableCreateComponent,
+    CpcClasseComptableListComponent, 
+    ClasseComptablesComponent, 
+    ClasseComptableCreateComponent, 
+    ClasseComptableListComponent, 
+    SousClasseComptablesComponent, 
+    SousClasseComptableCreateComponent, 
+    SousClasseComptableListComponent,
+    OperationComptablesComponent, 
+    OperationComptaableCreateComponent, 
+    OperationComptaableListComponent, 
+    CompteComptablesComponent,
+    CompteComptableCreateComponent,
+    CompteComptableListComponent,
+    LoginComponent,
+    RegisterComponent,
+    OperationComptableRechercheV1Component,
+    OperationComptableRechercheV2Component,
+    OperationComptableRechercheV3Component 
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

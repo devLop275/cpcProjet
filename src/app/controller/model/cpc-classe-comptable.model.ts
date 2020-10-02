@@ -4,8 +4,7 @@ export class CpcClasseComptable {
 
     public id:number;
     public montant:number;
-    public classeComptableVo:ClasseComptable;
-    public cpcSousClasseVo:CpcSousClasse;
+    public cpcSousClasse:CpcSousClasse;
 
     constructor(){
         

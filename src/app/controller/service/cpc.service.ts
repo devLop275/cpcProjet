@@ -9,7 +9,7 @@ export class CpcService {
 
   private _cpc = new Cpc();
   private _cpcs = new Array<Cpc>();
-
+  private baseUrl = 'http://localhost:8091/ProjetCpc/Cpc';
 
   constructor(private http: HttpClient) { }
 
@@ -35,8 +35,10 @@ export class CpcService {
     this._cpcs = value;
   }
 
-  private clone(cpc: Cpc){
+  public clone(cpc: Cpc){
     const myClone = new Cpc();
+    myClone.id = cpc.id;
+    myClone.numero = cpc.numero;
     myClone.dateDebut = cpc.dateDebut;
     myClone.dateFin = cpc.dateFin;
     myClone.montant = cpc.montant;
@@ -48,7 +50,7 @@ export class CpcService {
   }
 
   public save() {
-    this.http.post<Cpc>('http://localhost:8091/ProjetCpc/Cpc/', this.cpc).subscribe(
+    this.http.post<Cpc>(this.baseUrl + '/', this.cpc).subscribe(
       data => {
         if (data != null ) {
           this.cpc.id = data.id;
@@ -62,8 +64,12 @@ export class CpcService {
     )
   }
 
+  public getAllCpcs(){
+    return this.http.get<Cpc[]>(this.baseUrl+'/');
+  }
+
   public findAll() {
-    this.http.get<Array<Cpc>>('http://localhost:8091/ProjetCpc/Cpc/').subscribe(
+    this.http.get<Array<Cpc>>(this.baseUrl + '/').subscribe(
       data => {
         this.cpcs = data;
         console.log(data);
@@ -71,8 +77,22 @@ export class CpcService {
     )
   }
 
+  public update() {
+    this.http.put<number>(this.baseUrl + '/update/', this.cpc).subscribe(data => {
+      if (data > 0) {
+        const index = this.cpcs.findIndex(p => p.id === this.cpc.id);
+        this.cpcs[index] = this.cpc;
+        this.cpc = null;
+      }
+      else {
+        console.log('Erreur modification : ' + data);
+      }
+    });
+  }
+
+
   public delete(id: number, i: number) {
-    this.http.delete<number>('http://localhost:8091/ProjetCpc/Cpc/id/' + id).subscribe(
+    this.http.delete<number>(this.baseUrl + '/id/' + id).subscribe(
       data => {
         if(data > 0){
         this.cpcs.splice(i,1);

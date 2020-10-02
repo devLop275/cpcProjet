@@ -23,6 +23,13 @@ export class CpcCreateComponent implements OnInit {
   }
 
   public save(){
-    this.cpcService.save();
+    if(this.cpcService.cpc.id != null){
+      this.cpcService.update();
+      console.log(this.cpcService.cpc.id);
+    } else {
+      this.cpcService.save();
+      console.log(this.cpcService.cpc.id);
+    }
+    
   }
 }

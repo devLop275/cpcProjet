@@ -6,9 +6,8 @@ export class CpcSousClasse {
 
     public id:number;
     public montant:number;
-    public cpcVo:Cpc;
-    public sousClasseComptableVo:SousClasseComptable;
-    public cpcClasseComptablesVo:CpcClasseComptable[];
+    public cpc:Cpc;
+   
 
     constructor(){
         

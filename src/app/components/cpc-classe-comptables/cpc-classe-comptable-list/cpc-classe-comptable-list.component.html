@@ -1,14 +1,22 @@
-<table class="table">
-    <thead>
-        <tr>
+<div class="card">
+    <div class=" card-header">
+        <h4 class=" card-title">Liste des Cpc Classe Comptables</h4>
+    </div>
+    <div class=" card-body">
+        <div class=" table-responsive">
+        <table class=" table tablesorter" id="">
+            <thead class=" text-primary">
+            <tr>
             <th scope="col">montant</th>
+            <th scope="col">Cpc Sous Classe</th>
         </tr>
     </thead>
     <tbody>
          <tr *ngFor="let cpcClasseComptable of cpcClasseComptables; let i = index">
             <td>{{ cpcClasseComptable.montant}}</td>
+            <td>{{ cpcClasseComptable.cpcSousClasse.id}}</td>
             <td>
-                <!--<button class="btn btn-sm btn-warning mr-2" (click)="update(mission, i)"><i class="fa fa-pencil"></i></button> -->
+                <button class="btn btn-sm btn-warning mr-2" (click)="update(cpcClasseComptable)"><i class="fas fa-pencil-alt"></i></button> 
                 <button class="btn btn-sm btn-primary" (click)="delete(cpcClasseComptable.id,i)"><i class="fa fa-trash"></i> </button>
             </td>
         </tr>
