@@ -20,6 +20,7 @@ import { OperationComptablesComponent } from 'src/app/components/operation-compt
 import { CompteComptablesComponent } from 'src/app/components/compte-comptables/compte-comptables.component';
 
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
+import { OperationComptaableListComponent } from '../../components/operation-comptables/operation-comptaable-list/operation-comptaable-list.component';
 
 export const AdminLayoutRoutes: Routes = [
   { path: "dashboard", component: DashboardComponent },
@@ -37,7 +38,8 @@ export const AdminLayoutRoutes: Routes = [
   {path:"ClasseComptables" , component:ClasseComptablesComponent},
   {path:"SousClasseComptables" , component:SousClasseComptablesComponent},
   {path:"OperationComptables" , component:OperationComptablesComponent},
-  {path:"CompteComptables" , component:CompteComptablesComponent}
+  {path:"CompteComptables" , component:CompteComptablesComponent},
+  {path:"OperationComptableRechercheV2" , component:OperationComptaableListComponent}
 
   // { path: "rtl", component: RtlComponent }
 ];

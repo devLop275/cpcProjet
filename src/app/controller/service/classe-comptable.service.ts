@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClasseComptableService {
 
-  private baseUrl = 'http://localhost:8090/accountingProject/ClasseComptable';
+  private baseUrl = 'http://localhost:8090/ProjetCpc/ClasseComptable';
   private _classeComptable = new ClasseComptable();
   private _classeComptables = Array<ClasseComptable>();
 
@@ -24,15 +24,32 @@ export class ClasseComptableService {
     });
   }
 
+  public update() {
+    this.http.put<number>(this.baseUrl + '/update/', this.classeComptable).subscribe(data => {
+      if (data > 0) {
+        const index = this.classeComptables.findIndex(p => p.id === this.classeComptable.id);
+        this.classeComptables[index] = this.classeComptable;
+        this.classeComptable = null;
+      }
+      else {
+        console.log('Erreur modification : ' + data);
+      }
+    });
+  }
+
   public findAll() {
-    this.http.get<Array<ClasseComptable>>(this.baseUrl + '/').subscribe(data => {
+    return this.http.get<Array<ClasseComptable>>(this.baseUrl + '/').subscribe(data => {
       this.classeComptables = data;
     });
   }
 
-  public delete(numero: string, i: number) {
+  public getAll() {
+    return this.http.get<Array<ClasseComptable>>(this.baseUrl + '/');
+  }
+
+  public delete(numero: number , i: number) {
     if (confirm('Voulez-vous vraimenet faire?')) {
-      this.http.delete<number>(this.baseUrl + '/numero/' + numero).subscribe(data => {
+      this.http.delete<number>(this.baseUrl + '/delete/numero/' + numero).subscribe(data => {
         if (data > 0) {
           this.classeComptables.splice(i, data);
         }

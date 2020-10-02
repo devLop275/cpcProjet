@@ -9,7 +9,7 @@ import { SousClasseComptable } from 'src/app/controller/model/sous-classe-compta
 })
 export class SousClasseComptableListComponent implements OnInit {
 
-  constructor( private sousClasseComptableService: SousClasseComptableService ) { }
+  constructor(private sousClasseComptableService: SousClasseComptableService) { }
 
   ngOnInit(): void {
     this.sousClasseComptableService.findAll();
@@ -22,9 +22,19 @@ export class SousClasseComptableListComponent implements OnInit {
     this.sousClasseComptableService.delete(id, i);
   }
 
-  //public update(sousClasseComptable: SousClasseComptable, i: number) {
-    //this.sousClasseComptableService.sousClasseComptable = this.sousClasseComptableService.coclone(sousClasseComptable);
- // }
+  public update(sousClasseComptable: SousClasseComptable) {
+    this.sousClasseComptableService.sousClasseComptable = this.clone(sousClasseComptable);
+  }
 
-  
+  private clone(sousClasseComptable: SousClasseComptable) {
+    const myClone = new SousClasseComptable();
+    myClone.id = sousClasseComptable.id;
+    myClone.numero = sousClasseComptable.numero;
+    myClone.libelle = sousClasseComptable.libelle;
+    myClone.classeComptable = sousClasseComptable.classeComptable;
+    myClone.classeComptable.libelle = sousClasseComptable.classeComptable.libelle;
+    return myClone;
+  }
+
+
 }

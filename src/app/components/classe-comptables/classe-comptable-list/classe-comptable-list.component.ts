@@ -17,16 +17,17 @@ export class ClasseComptableListComponent implements OnInit {
   get classeComptables(): Array<ClasseComptable> {
     return this.classeComptableService.classeComptables;
   }
-  public delete(numero: string, i: number) {
+  public delete(numero: number, i: number) {
     this.classeComptableService.delete(numero, i);
   }
 
-  public update(classeComptable: ClasseComptable, i: number) {
+  public update(classeComptable: ClasseComptable) {
     this.classeComptableService.classeComptable = this.clone(classeComptable);
   }
 
   private clone(classeComptable: ClasseComptable) {
     const myClone = new ClasseComptable();
+    myClone.id = classeComptable.id;
     myClone.numero = classeComptable.numero;
     myClone.libelle = classeComptable.libelle;
     return myClone;

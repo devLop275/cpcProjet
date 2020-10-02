@@ -6,7 +6,7 @@ export class SousClasseComptable {
     public numero:number;
     public libelle:String;
     public classeComptable:ClasseComptable;
-    public compteComptablesVo:CompteComptable[];
+    public compteComptables:CompteComptable[];
 
     constructor(){
         

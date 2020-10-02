@@ -7,7 +7,7 @@ export class OperationComptable {
     public montant: number;
     public dateOperationComptable: Date;
     public dateSaisie: Date;
-    public compteComptableVo: CompteComptable;
+    public compteComptable: CompteComptable;
 
 }
 /*

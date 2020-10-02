@@ -4,7 +4,7 @@ export class CompteComptable {
     public id:number;
     public code:number;
     public libelle:String;
-    public sousClasseComptableVo:SousClasseComptable;
+    public sousClasseComptable:SousClasseComptable;
 
     constructor(){
         

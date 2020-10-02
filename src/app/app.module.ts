@@ -29,8 +29,8 @@ import { SousClasseComptablesComponent } from './components/sous-classe-comptabl
 import { SousClasseComptableCreateComponent } from './components/sous-classe-comptables/sous-classe-comptable-create/sous-classe-comptable-create.component';
 import { SousClasseComptableListComponent } from './components/sous-classe-comptables/sous-classe-comptable-list/sous-classe-comptable-list.component';
 import { OperationComptablesComponent } from './components/operation-comptables/operation-comptables.component';
-import { OperationComptaableCreateComponent } from './components/operation-Comptables/operation-comptaable-create/operation-comptaable-create.component';
-import { OperationComptaableListComponent } from './components/operation-Comptables/operation-comptaable-list/operation-comptaable-list.component';
+import { OperationComptaableCreateComponent } from './components/operation-comptables/operation-comptaable-create/operation-comptaable-create.component';
+import { OperationComptaableListComponent } from './components/operation-comptables/operation-comptaable-list/operation-comptaable-list.component';
 import { CompteComptablesComponent } from './components/compte-comptables/compte-comptables.component';
 import { CompteComptableCreateComponent } from './components/compte-comptables/compte-comptable-create/compte-comptable-create.component';
 import { CompteComptableListComponent } from './components/compte-comptables/compte-comptable-list/compte-comptable-list.component';

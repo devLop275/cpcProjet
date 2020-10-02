@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ClasseComptable } from 'src/app/controller/model/classe-comptable.model';
-import { Cpc } from 'src/app/controller/model/cpc.model';
-import { ClasseComptableService } from 'src/app/controller/service/classe-comptable.service';
-import { CpcService } from 'src/app/controller/service/cpc.service';
+import { CompteComptable } from 'src/app/controller/model/compte-comptable.model';
+import { CompteComptableService } from 'src/app/controller/service/compte-comptable.service';
+import { SousClasseComptable } from '../../../controller/model/sous-classe-comptable.model';
+import { SousClasseComptableService } from '../../../controller/service/sous-classe-comptable.service';
 
 @Component({
   selector: 'app-compte-comptable-create',
@@ -11,17 +11,42 @@ import { CpcService } from 'src/app/controller/service/cpc.service';
 })
 export class CompteComptableCreateComponent implements OnInit {
 
-  constructor( private classeComptableService: ClasseComptableService) { }
+  sousClasseComptable:SousClasseComptable;
+  sousClasseComptables:SousClasseComptable[];
+
+  constructor( private compteComptableService:CompteComptableService,private sousClasseComptableService: SousClasseComptableService  ) { }
 
   ngOnInit(): void {
+    this.getAllSousClasseComptables();
   }
-  get classeComptable(): ClasseComptable {
-    return this.classeComptableService.classeComptable;
+
+  public getAllSousClasseComptables(){
+    this.sousClasseComptableService.getAll().subscribe(
+      data=>{
+        this.sousClasseComptables = data;
+      },
+      error=>{
+        console.log(error);
+      }
+    )
   }
-  get classeComptables(): Array<ClasseComptable> {
-    return this.classeComptableService.classeComptables;
+
+  get compteComptable(): CompteComptable {
+    return this.compteComptableService.compteComptable;
   }
-  public save(){
-    this.classeComptableService.save();
+  set compteComptable(value:CompteComptable){
+    this.compteComptableService.compteComptable=value;
   }
+  get compteComptables(): Array<CompteComptable> {
+    return this.compteComptableService.compteComptables;
+  }
+  public save() {
+    if (this.compteComptableService.compteComptable.id != null) {
+      this.compteComptableService.update();
+    }
+    else {
+      this.compteComptableService.save();
+    }
+  }
+  
 }

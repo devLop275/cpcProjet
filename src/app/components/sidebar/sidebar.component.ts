@@ -23,7 +23,7 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "//CpcClasseComptables",
+    path: "/CpcClasseComptables",
     title: "cpc classe comptable",
     rtlTitle: "الرموز",
     icon: "icon-atom",
@@ -42,7 +42,13 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-bell-55",
     class: ""
   },
-
+  {
+    path: "/CompteComptables",
+    title: "Compte Comtable",
+    rtlTitle: "ملف تعريفي للمستخدم",
+    icon: "icon-single-02",
+    class: ""
+  },
   {
     path: "/OperationComptables",
     title: "Operation Comptable",
@@ -51,8 +57,8 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/CompteComptables",
-    title: "Compte Comtable",
+    path: "/OperationComptableRechercheV2",
+    title: "OP SousClasse",
     rtlTitle: "ملف تعريفي للمستخدم",
     icon: "icon-single-02",
     class: ""

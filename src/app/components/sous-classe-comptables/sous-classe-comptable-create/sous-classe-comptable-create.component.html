@@ -13,6 +13,15 @@
             <input type="text" [(ngModel)]="sousClasseComptable.libelle" class="form-control" id="exampleSolde"
                 placeholder="Entrer le libelle" />
         </div>
+        <div class="form-group">
+            <label for="designation">Classe Comptable</label>
+            <select name="classeComptable" id="designation" [(ngModel)]="sousClasseComptable.classeComptable" class="form-control" #mySelect>
+                <option value="">Sélectionnez...</option>
+                <option *ngFor="let e of classeComptables;" [ngValue]="e">
+                    {{ e.libelle }}
+                </option>
+            </select>
+        </div>
     </div>
     <div class="card-footer">
         <button type="submit" class="btn btn-block btn-primary" (click)="save()">Save</button>

@@ -20,7 +20,12 @@ export class ClasseComptableCreateComponent implements OnInit {
   get classeComptables(): Array<ClasseComptable> {
     return this.classeComptableService.classeComptables;
   }
-  public save(){
-    this.classeComptableService.save();
+  public save() {
+    if (this.classeComptableService.classeComptable.id != null) {
+      this.classeComptableService.update();
+    }
+    else {
+      this.classeComptableService.save();
+    }
   }
 }

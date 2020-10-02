@@ -10,6 +10,7 @@ export class OperationComptableService {
 
   private _operationComptable = new OperationComptable();
   private _operationComptables = new Array<OperationComptable>();
+  private baseUrl = 'http://localhost:8090/ProjetCpc/OperationComptable/';
 
   constructor(private http: HttpClient) { }
 
@@ -47,7 +48,7 @@ export class OperationComptableService {
   }
 
   public save() {
-    this.http.post<OperationComptable>('http://localhost:8090/accountingProject/OperationComptable/', this.operationComptable).subscribe(
+    this.http.post<OperationComptable>(this.baseUrl, this.operationComptable).subscribe(
       data => {
         if (data != null ) {
           this.operationComptables.push(this.clone(this.operationComptable));
@@ -61,7 +62,7 @@ export class OperationComptableService {
   }
 
   public findAll() {
-    this.http.get<Array<OperationComptable>>('http://localhost:8090/accountingProject/OperationComptable/').subscribe(
+    this.http.get<Array<OperationComptable>>(this.baseUrl).subscribe(
       data => {
         this.operationComptables = data;
         console.log(data);
@@ -70,18 +71,29 @@ export class OperationComptableService {
   }
 
   public delete(id: number, i: number) {
-    this.http.delete<number>('http://localhost:8090/accountingProject/OperationComptable/id/' + id).subscribe(
+    this.http.delete<number>(this.baseUrl+'id/' + id).subscribe(
       data => {
         this.operationComptables.splice(i,1);
         console.log(data);
       }
     )
   }
-   
-  
+
+  public findByCompteComptable(dateDebut:Date,dateFin:Date,code:number){
+    return this.http.get<OperationComptable[]>(this.baseUrl+'rechercher/CompteComptable/dateDebut/'+ dateDebut +'/dateFin/'+ dateFin +'/code/'+ code);
+  }
+
+  public findBySousClasseComptable(dateDebut:Date,dateFin:Date,code:string){
+    return this.http.get<OperationComptable[]>(this.baseUrl+'rechercher/SousClasseComptable/dateDebut/'+ dateDebut +'/dateFin/'+ dateFin +'/code/'+ code);
+  }
 
   public getExcel(): Observable<Blob> {
-    return this.http.post<Blob>("http://localhost:8090/accountingProject/OperationComptable/excel/", this._operationComptables, {responseType: 'blob' as 'json'})}
+    return this.http.post<Blob>(this.baseUrl + "excel/", this._operationComptables, {responseType: 'blob' as 'json'})
+  }
+
+  public getExcelTwo(operationComptables:OperationComptable[]): Observable<Blob> {
+    return this.http.post<Blob>(this.baseUrl + "excel/", operationComptables, {responseType: 'blob' as 'json'})
+  }
 
 
 }
